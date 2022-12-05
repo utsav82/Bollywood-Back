@@ -7,27 +7,30 @@ function Form() {
   const [YYYY, setYYYY] = useState("");
   function handleDD(e) {
     e.preventDefault();
-    setDD(e.target.value);
+    if (isNaN(e.target.value)) {
+      setDD("");
+      alert("Please enter only numbers");
+    } else {
+      setDD(e.target.value);
+    }
   }
   function handleMM(e) {
     e.preventDefault();
-    setMM(e.target.value);
+    if (isNaN(e.target.value)) {
+      setMM("");
+      alert("Please enter only numbers");
+    } else {
+      setMM(e.target.value);
+    }
   }
   function handleYYYY(e) {
     e.preventDefault();
-    setYYYY(e.target.value);
-  }
-  if (isNaN(DD)) {
-    setDD("");
-    alert("Please enter only numbers");
-  }
-  if (isNaN(MM)) {
-    setMM("");
-    alert("Please enter only numbers");
-  }
-  if (isNaN(YYYY)) {
-    setYYYY("");
-    alert("Please enter only numbers");
+    if (isNaN(e.target.value)) {
+      setYYYY("");
+      alert("Please enter only numbers");
+    } else {
+      setYYYY(e.target.value);
+    }
   }
 
   return (
