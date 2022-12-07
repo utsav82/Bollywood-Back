@@ -5,7 +5,7 @@ import Hero from "./Sections/Hero";
 
 function App() {
   return (
-    <div className="App bg-[#87D4E4] overflow-hidden">
+    <div className="App bg-[#87D4E4] scrollbar ">
       <Hero></Hero>
       <Footer></Footer>
     </div>
