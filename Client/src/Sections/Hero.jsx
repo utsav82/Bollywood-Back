@@ -2,6 +2,7 @@ import React from "react";
 import image from "../assets/Amitabh Bachan.png";
 import Form from "./Form";
 import Player from "./Player";
+
 function Hero() {
   return (
     <div className="hero flex flex-col justify-center justify-items-center items-center h-screen drop-shadow-[5px_10px_4px_rgba(0,0,0,0.5)]">
