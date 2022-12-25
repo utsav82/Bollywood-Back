@@ -20,7 +20,13 @@ app.get("/", (req, res) => {
 app.get("/movie", async (req, res) => {
   console.log(req.query);
 
-  var dateCalc = new Date(req.query.date);
+  try{
+    var dateCalc = new Date(req.query.date);
+  }catch(errors){
+    console.log("Invalid date");
+    return ;
+  }
+  
   // sample url is http://localhost:3001/movies?date=2003-11-25
   var date2 = dateCalc.toISOString().substring(0, 10);
   dateCalc.setMonth(dateCalc.getMonth() - 2);
@@ -38,19 +44,28 @@ app.get("/movie", async (req, res) => {
     var video = await trailer(result_movie.id);
     if (video.data.results) {
       for (var i = 0, size = video.data.results.length; i < size; i++) {
-        if (video.data.results[i].site == "YouTube") {
-          trailer_video =
-            "https://www.youtube.com/watch?v=" + video.data.results[i].key;
-          if (video.data.results[i].name == "Trailer") {
+        if (video.data.results[i].site == 'YouTube') {
+          trailer_video = ('https://www.youtube.com/watch?v=' + video.data.results[i].key);
+          if (video.data.results[i].name == 'Trailer') {
             break;
           }
         }
       }
+
     }
   }
-  console.log(trailer_video);
+  console.log(trailer_video)
   res.send(result_movie);
 });
+
+app.get("/video", async (req, res) => {
+
+const videos = await trailer(req.query.name);
+res.send(videos.data.items[0]);
+
+
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server Running on port - ${PORT}`);
