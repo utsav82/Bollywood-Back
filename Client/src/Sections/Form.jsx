@@ -5,18 +5,17 @@ import Calender_Btn from "../assets/Calender_Btn";
 import { getMovieData } from "../utils/actions";
 
 function Form() {
-  const [{birthdate, movie_data},dispatch] = useDataLayerValue();
+  const [{ }, dispatch] = useDataLayerValue();
   const [DD, setDD] = useState("");
   const [MM, setMM] = useState("");
   const [YYYY, setYYYY] = useState("");
-  const [MovieData, setMovieData] = useState({});
+ 
   function handleSubmit(e) {
     e.preventDefault();
     let birthdate = YYYY + "-" + MM + "-" + DD;
     console.log(birthdate);
-    var Movie_data = getMovieData(birthdate);
-    setMovieData(Movie_data);
-    dispatch()
+    
+    dispatch({ type: "SET_BIRTHDATE", birthdate: birthdate });
   }
 
   function handleDD(e) {
