@@ -14,3 +14,14 @@ export function search(date1, date2){
 
     )
 }
+export function trailer(id)
+{
+    return axios.get(urlMovie + 'movie/' + id +'/videos',
+    {
+        params: {
+            'api_key': process.env.API_KEY,
+        }
+    }
+
+) 
+}
