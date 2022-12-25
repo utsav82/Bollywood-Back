@@ -18,13 +18,13 @@ app.get("/", (req, res) => {
 });
 
 app.get("/movie", async (req, res) => {
-  console.log(req.query);
+  console.log(req.query.date);
 
   try {
     var dateCalc = new Date(req.query.date);
   } catch (errors) {
     console.log("Invalid date");
-    // return;
+    return;
   }
 
   // sample url is http://localhost:3001/movies?date=2003-11-25
@@ -40,21 +40,7 @@ app.get("/movie", async (req, res) => {
       break;
     }
   }
-  if (result_movie) {
-    var video = await trailer(result_movie.id);
-    if (video.data.results) {
-      for (var i = 0, size = video.data.results.length; i < size; i++) {
-        if (video.data.results[i].site == "YouTube") {
-          trailer_video =
-            "https://www.youtube.com/watch?v=" + video.data.results[i].key;
-          if (video.data.results[i].name == "Trailer") {
-            break;
-          }
-        }
-      }
-    }
-  }
-  console.log(trailer_video);
+
   res.send(result_movie);
 });
 
