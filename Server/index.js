@@ -2,8 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
-import axios from "axios";
-import CircularJSON from "circular-json";
+import { search } from "./tmdb.js";
 
 const app = express();
 dotenv.config();
@@ -19,14 +18,23 @@ app.get("/", (req, res) => {
 });
 
 app.get("/movies", async (req, res) => {
-  console.log(req.query);
-  const movies = await axios.get(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&sort_by=popularity.desc&with_original_language=hi&release_date.gte=${req.query.date}&release_date.lte=2003-05-01&with_watch_monetization_types=flatrate`
-  );
-  const temp = CircularJSON.stringify(movies);
-  const data = JSON.parse(temp);
-  let len = data?.data.results.length;
-  res.send(data?.data?.results[len - 1]);
+console.log(req.query);
+
+var dateCalc = new Date(req.query.date);
+// sample url is http://localhost:3001/movies?date=2003-11-25
+var date2 = dateCalc.toISOString().substring(0,10);
+dateCalc.setMonth(dateCalc.getMonth() - 2);
+var date1 = dateCalc.toISOString().substring(0,10);
+var result_movie;
+const movies = await search(date1,date2);
+for (var i=0, size = movies.data.results.length; i < size; i++) {
+      if(movies.data.results[i].original_language == 'hi'){
+        result_movie = movies.data.results[i];
+      break;
+    }
+}
+
+  res.send(result_movie);
 });
 
 app.listen(PORT, () => {
