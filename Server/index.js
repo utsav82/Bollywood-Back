@@ -19,29 +19,26 @@ app.get("/", (req, res) => {
 
 app.get("/movie", async (req, res) => {
   console.log(req.query.date);
-
   try {
     var dateCalc = new Date(req.query.date);
-  } catch (errors) {
-    console.log("Invalid date");
-    return;
-  }
-
-  // sample url is http://localhost:3001/movies?date=2003-11-25
-  var date2 = dateCalc.toISOString().substring(0, 10);
-  dateCalc.setMonth(dateCalc.getMonth() - 2);
-  var date1 = dateCalc.toISOString().substring(0, 10);
-  var result_movie;
-  var trailer_video;
-  const movies = await search(date1, date2);
-  for (var i = 0, size = movies.data.results.length; i < size; i++) {
-    if (movies.data.results[i].original_language == "hi") {
-      result_movie = movies.data.results[i];
-      break;
+    // sample url is http://localhost:3001/movie?date=2003-11-25
+    var date2 = dateCalc.toISOString().substring(0, 10);
+    dateCalc.setMonth(dateCalc.getMonth() - 2);
+    var date1 = dateCalc.toISOString().substring(0, 10);
+    var result_movie;
+    const movies = await search(date1, date2);
+    for (var i = 0, size = movies.data.results.length; i < size; i++) {
+      if (movies.data.results[i].original_language == "hi") {
+        result_movie = movies.data.results[i];
+        break;
+      }
     }
+    res.send(result_movie);
+  } catch (errors) {
+    console.log(errors);
+    // return;
   }
 
-  res.send(result_movie);
 });
 
 app.get("/video", async (req, res) => {
