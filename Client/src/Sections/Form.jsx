@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useDataLayerValue } from "../utils/data_layer";
 import Calender_Btn from "../assets/Calender_Btn";
-import { getMovieData } from "../utils/actions";
+import { getMovieData, getMovieVid } from "../utils/actions";
 
 function Form() {
   const [{}, dispatch] = useDataLayerValue();
@@ -11,6 +11,7 @@ function Form() {
   const [YYYY, setYYYY] = useState("");
   const [BirthDate, setBirthDate] = useState("");
   const [MovieData, setMovieData] = useState({});
+  const [MovieId, setMovieId] = useState("");
   function handleSubmit(e) {
     e.preventDefault();
     const birthdate = YYYY + "-" + MM + "-" + DD;
@@ -27,6 +28,21 @@ function Form() {
     setData();
     dispatch({ type: "SET_BIRTHDATE", birthdate: BirthDate });
   }, [BirthDate]);
+
+  const setId = async () => {
+    if (MovieData != "") {
+      const mdataa = await getMovieVid(MovieData.title);
+      setMovieId(mdataa)
+      console.log(MovieId);
+      dispatch({ type: "SET_YOUTUBE_ID", youtube_id: MovieId });
+    }
+  };
+
+  useEffect(() => {
+    setId();
+    dispatch({ type: "SET_MOVIE_DATA", movie_data: MovieData });
+  }, [MovieData]);
+
 
   function handleDD(e) {
     e.preventDefault();
@@ -60,11 +76,13 @@ function Form() {
     <div className="flex justify-center justify-items-center items-center w-[100%] h-[26%]">
       <form
         className="flex justify-center justify-items-center items-center gap-4 w-[66%] h-[100%]"
-        onSubmit={handleSubmit}>
+        onSubmit={handleSubmit}
+      >
         <div className="flex flex-col items-center">
           <label
             className="text-7xl leading-[0.5] font-['shallota']"
-            htmlFor="DD">
+            htmlFor="DD"
+          >
             DD
           </label>
           <input
@@ -81,7 +99,8 @@ function Form() {
         <div className="flex flex-col items-center">
           <label
             className="text-7xl leading-[0.5] font-['shallota']"
-            htmlFor="MM">
+            htmlFor="MM"
+          >
             MM
           </label>
           <input
@@ -100,7 +119,8 @@ function Form() {
         <div className="flex flex-col items-center">
           <label
             className="text-7xl leading-[0.5] font-['shallota']"
-            htmlFor="YYYY">
+            htmlFor="YYYY"
+          >
             YYYY
           </label>
           <input

@@ -38,12 +38,15 @@ app.get("/movie", async (req, res) => {
     console.log(errors);
     // return;
   }
-
 });
 
 app.get("/video", async (req, res) => {
-  const videos = await trailer(req.query.name);
-  res.send(videos.data.items[0]);
+  try {
+    const videos = await trailer(req.query.name);
+    res.send(videos.data.items[0].id.videoId);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 app.listen(PORT, () => {

@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: shallota;
-    src: url("../src/assets/Fonts/Shallota-Black.ttf");
-  }
+  font-family: shallota;
+  src: url("../src/assets/Fonts/Shallota-Black.ttf");
+}
 @font-face {
-    font-family: devanagarish;
-    src: url("../src/assets/Fonts/devanagarish.ttf");
-  }
+  font-family: devanagarish;
+  src: url("../src/assets/Fonts/devanagarish.ttf");
+}

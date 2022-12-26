@@ -4,9 +4,20 @@ const API = axios.create({ baseURL: "http://localhost:3001" });
 
 export const getMovieData = async (date) => {
   try {
+    if(date){
     const { data } = await API.get(`/movie?date=${date}`);
     // console.log(data);
-    return data;
+    return data;}
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const getMovieVid = async (name) => {
+  try {
+    if(name){
+    const vidId = await API.get(`/video?name=${name}`);
+    console.log(vidId.data);
+    return vidId;}
   } catch (error) {
     console.log(error);
   }

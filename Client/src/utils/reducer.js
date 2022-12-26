@@ -1,7 +1,7 @@
 export const initialState = {
   birthdate: null,
   movie_data: null,
-  youtube_url: null,
+  youtube_id: null,
 };
 
 const reducer = (state, action) => {
@@ -19,10 +19,10 @@ const reducer = (state, action) => {
         movie_data: action.movie_data,
       };
 
-    case "SET_YOUTUBE_URL":
+    case "SET_YOUTUBE_ID":
       return {
         ...state,
-        youtube_url: action.youtube_url,
+        youtube_id: action.youtube_id,
       };
 
     default:
