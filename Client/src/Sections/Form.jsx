@@ -24,24 +24,24 @@ function Form() {
       dispatch({ type: "SET_MOVIE_DATA", movie_data: MovieData });
     }
   };
+  const setId = async () => {
+    if (MovieData != {}) {
+      const mdataa = await getMovieVid(MovieData.title);
+      console.log(mdataa?.data);
+      dispatch({ type: "SET_YOUTUBE_ID", youtube_id: mdataa?.data });
+      if(mdataa?.data !=""){
+        setMovieId(mdataa?.data)
+      }
+    }
+  };
   useEffect(() => {
     setData();
+    setId();
     dispatch({ type: "SET_BIRTHDATE", birthdate: BirthDate });
   }, [BirthDate]);
 
-  const setId = async () => {
-    if (MovieData != "") {
-      const mdataa = await getMovieVid(MovieData.title);
-      setMovieId(mdataa)
-      console.log(MovieId);
-      dispatch({ type: "SET_YOUTUBE_ID", youtube_id: MovieId });
-    }
-  };
 
-  useEffect(() => {
-    setId();
-    dispatch({ type: "SET_MOVIE_DATA", movie_data: MovieData });
-  }, [MovieData]);
+  
 
 
   function handleDD(e) {

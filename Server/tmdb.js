@@ -20,12 +20,14 @@ export function search(date1, date2) {
 
 export function trailer(name) {
   try {
+    console.log(name)
     const result = axios.get("https://www.googleapis.com/youtube/v3/search", {
+      
       params: {
         key: process.env.API_KEY_YT,
         type: "video",
         part: "snippet",
-        maxResults: 2,
+        maxResults: 1,
         q: name,
       },
     });
