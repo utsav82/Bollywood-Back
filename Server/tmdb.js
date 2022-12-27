@@ -26,7 +26,20 @@ export function trailer(name) {
         type: "video",
         part: "snippet",
         maxResults: 1,
-        q: name,
+        q: name + "movie" + "trailer",
+      },
+    });
+    return result;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+export function TMDBtrailer(id) {
+  try {
+    const result = axios.get(URL_MOVIE + "movie/" + id + "/videos", {
+      params: {
+        api_key: process.env.API_KEY_TMDB,
       },
     });
     return result;

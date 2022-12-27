@@ -9,15 +9,15 @@ function Hero() {
   const [{ birthdate, movie_data }, dispatch] = useDataLayerValue();
   const setData = async () => {
     if (birthdate != "") {
-      console.log(birthdate)
+      console.log(birthdate);
       const mdata = await getMovieData(birthdate);
       dispatch({ type: "SET_MOVIE_DATA", movie_data: mdata });
     }
   };
 
   useEffect(() => {
-    setData()
-  }, [ birthdate]);
+    setData();
+  }, [birthdate]);
   return (
     <div className="hero flex flex-col justify-center justify-items-center items-center h-screen drop-shadow-[5px_10px_4px_rgba(0,0,0,0.5)]">
       <div className="absolute top-[-40px] z-10">

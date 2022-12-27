@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
-import { search, trailer } from "./tmdb.js";
+import { search, trailer, TMDBtrailer } from "./tmdb.js";
 
 const app = express();
 dotenv.config();
@@ -42,8 +42,24 @@ app.get("/movie", async (req, res) => {
 
 app.get("/video", async (req, res) => {
   try {
-    const videos = await trailer(req.query.name);
-    res.send(videos.data.items[0].id.videoId);
+    if (req.query.id) {
+      var video = await TMDBtrailer(req.query.id);
+      if (video.data.results) {
+        for (var i = 0, size = video.data.results.length; i < size; i++) {
+          if (video.data.results[i].site == "YouTube") {
+            var trailer_video = video.data.results[i].key;
+            if (video.data.results[i].name == "Trailer") {
+              break;
+            }
+          }
+        }
+      }
+      res.send(trailer_video);
+    }
+    if (req.query.name) {
+      const videos = await trailer(req.query.name);
+      res.send(videos.data.items[0].id.videoId);
+    }
   } catch (err) {
     console.log(err);
   }

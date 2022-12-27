@@ -18,12 +18,6 @@ function Form() {
     dispatch({ type: "SET_BIRTHDATE", birthdate: birthdate });
     setBirthDate(birthdate);
   }
-  
-  
-
-
-  
-
 
   function handleDD(e) {
     e.preventDefault();
