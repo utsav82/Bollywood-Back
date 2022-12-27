@@ -15,30 +15,11 @@ function Form() {
   function handleSubmit(e) {
     e.preventDefault();
     const birthdate = YYYY + "-" + MM + "-" + DD;
+    dispatch({ type: "SET_BIRTHDATE", birthdate: birthdate });
     setBirthDate(birthdate);
   }
-  const setData = async () => {
-    if (BirthDate != "") {
-      const mdata = await getMovieData(BirthDate);
-      setMovieData(mdata);
-      dispatch({ type: "SET_MOVIE_DATA", movie_data: MovieData });
-    }
-  };
-  const setId = async () => {
-    if (MovieData != {}) {
-      const mdataa = await getMovieVid(MovieData.title);
-      console.log(mdataa?.data);
-      dispatch({ type: "SET_YOUTUBE_ID", youtube_id: mdataa?.data });
-      if(mdataa?.data !=""){
-        setMovieId(mdataa?.data)
-      }
-    }
-  };
-  useEffect(() => {
-    setData();
-    setId();
-    dispatch({ type: "SET_BIRTHDATE", birthdate: BirthDate });
-  }, [BirthDate]);
+  
+  
 
 
   

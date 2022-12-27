@@ -1,5 +1,5 @@
 export const initialState = {
-  birthdate: null,
+  birthdate: "",
   movie_data: null,
   youtube_id: null,
 };
