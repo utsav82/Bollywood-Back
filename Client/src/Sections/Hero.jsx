@@ -5,6 +5,7 @@ import Player from "./Player";
 import { useEffect } from "react";
 import { useDataLayerValue } from "../utils/data_layer";
 import { getMovieData } from "../utils/actions";
+import Card from "./Card";
 function Hero() {
   const [{ birthdate, movie_data }, dispatch] = useDataLayerValue();
   const setData = async () => {
@@ -28,9 +29,10 @@ function Hero() {
       <div className="flex pl-3 relative justify-between justify-items-center items-center top-[3%] h-[88%] w-[96%] bg-[#fff]">
         <div className="flex flex-col relative w-[64%] h-[90%] top-[4%]">
           <Form></Form>
-          <h1>{movie_data?.title}</h1>
-          <h1>{movie_data?.release_date}</h1>
-          <Player></Player>
+          <div className="flex flex-row items-center justify-center">
+            <Card {...movie_data}></Card>
+            <Player></Player>
+          </div>
         </div>
         <div>
           <img src={image} alt="amitabh bachan" />

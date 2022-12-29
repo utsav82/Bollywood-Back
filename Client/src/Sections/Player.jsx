@@ -21,7 +21,7 @@ function Player() {
   }, [movie_data]);
 
   return (
-    <div className="flex flex-col relative w-[80%] h-[80%] top-[2%] left-[8%]">
+    <div className="flex flex-col relative w-[70%] h-[100%] top-[2%] left-[6%]">
       <iframe
         height="360"
         src={Url}

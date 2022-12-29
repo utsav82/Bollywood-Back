@@ -26,7 +26,7 @@ export function trailer(name) {
         type: "video",
         part: "snippet",
         maxResults: 1,
-        q: name + "movie" + "trailer",
+        q: name + "hindi bollywood movie trailer",
       },
     });
     return result;
