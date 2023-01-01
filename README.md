@@ -129,6 +129,7 @@ _Below are the instructions to setup the project locally , don't forget to Cd to
 ## Roadmap
 
 - [x] Add Readme
+- [ ] Add footer
 - [ ] Convert all units to rem
 - [ ] Make the site responsive
 - [ ] Deploy
