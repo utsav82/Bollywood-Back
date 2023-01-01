@@ -2,16 +2,18 @@ import React from "react";
 import image from "../assets/Amitabh Bachan.png";
 import Form from "./Form";
 import Player from "./Player";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDataLayerValue } from "../utils/data_layer";
 import { getMovieData } from "../utils/actions";
 import Card from "./Card";
 function Hero() {
   const [{ birthdate, movie_data }, dispatch] = useDataLayerValue();
+  const [show, setShow] = useState(false);
   const setData = async () => {
     if (birthdate != "") {
       console.log(birthdate);
       const mdata = await getMovieData(birthdate);
+      setShow(true);
       dispatch({ type: "SET_MOVIE_DATA", movie_data: mdata });
     }
   };
@@ -30,7 +32,7 @@ function Hero() {
         <div className="flex flex-col relative w-[64%] h-[90%] top-[4%]">
           <Form></Form>
           <div className="flex flex-row items-center justify-center">
-            <Card {...movie_data}></Card>
+            {show && <Card {...movie_data}></Card>}
             <Player></Player>
           </div>
         </div>
