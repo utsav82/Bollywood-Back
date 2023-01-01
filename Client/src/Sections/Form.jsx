@@ -61,7 +61,7 @@ function Form() {
             DD
           </label>
           <input
-            className="w-[100px] h-[80px] text-5xl rounded-md border-2 border-black text-center "
+            className="w-[6.25rem] h-[5rem] text-5xl rounded-md border-2 border-black text-center "
             type="text"
             maxLength={2}
             name="DD"
@@ -79,7 +79,7 @@ function Form() {
             MM
           </label>
           <input
-            className="w-[100px] h-[80px] text-5xl rounded-md border-2 border-black text-center "
+            className="w-[6.25rem] h-[5rem] text-5xl rounded-md border-2 border-black text-center "
             maxLength={2}
             type="text"
             min="0"
@@ -99,7 +99,7 @@ function Form() {
             YYYY
           </label>
           <input
-            className="w-[150px] h-[80px] text-5xl rounded-md border-2 border-black text-center "
+            className="w-[9.375rem] h-[5rem] text-5xl rounded-md border-2 border-black text-center "
             maxLength={4}
             type="text"
             name="YYYY"
