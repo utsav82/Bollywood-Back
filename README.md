@@ -67,6 +67,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 - [![React][react.js]][react-url]
 - ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+- ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 - <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_1-5bdc75aaebeb75dc7ae79426ddd9be3b2be1e342510f8202baf6bffa71d7f5c4.svg" width="100" height="100">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
