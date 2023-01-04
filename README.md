@@ -7,11 +7,13 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 <div align="center">
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![MIT License][license-shield]][license-url]
+
+  <a href="">[![Contributors][contributors-shield]][contributors-url]</a>
+  <a href="">[![Forks][forks-shield]][forks-url]</a>
+  <a href="">[![Stargazers][stars-shield]][stars-url]</a>
+  <a href="">[![MIT License][license-shield]][license-url]</a>
 </div>
+
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -160,6 +162,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Contact
 
 Utsav Yadav - [@Yadavutsav3](https://twitter.com/Yadavutsav3)
+Malay Kumar - [@void_MalayK](https://twitter.com/void_MalayK)
 
 Project Link: [https://github.com/Utsav82/Bollywood-Back](https://github.com/Utsav82/Bollywood-Back)
 
