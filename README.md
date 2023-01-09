@@ -123,6 +123,7 @@ _Below are the instructions to setup the project locally , don't forget to Cd to
 
 - [x] Add Readme
 - [ ] Add footer
+- [ ] Allow input through calendar 
 - [ ] Make the site responsive
 - [ ] Deploy
 - [ ] Add multiple results
