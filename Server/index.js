@@ -33,10 +33,15 @@ app.get("/movie", async (req, res) => {
         break;
       }
     }
+    if(!result_movie)
+    {
+      res.status(404).send('Movie not found or invalid date entered');
+    }
     res.send(result_movie);
-  } catch (errors) {
-    console.log(errors);
-    // return;
+    
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('Something went wrong');
   }
 });
 
@@ -60,8 +65,9 @@ app.get("/video", async (req, res) => {
       const videos = await trailer(req.query.name);
       res.send(videos.data.items[0].id.videoId);
     }
-  } catch (err) {
-    console.log(err);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error?.response.data.error.message || 'Something went wrong');
   }
 });
 

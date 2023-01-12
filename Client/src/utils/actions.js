@@ -5,11 +5,16 @@ const API = axios.create({ baseURL: "http://localhost:3001" });
 export const getMovieData = async (date) => {
   try {
     if (date) {
-      const { data } = await API.get(`/movie?date=${date}`);
+      const response = await API.get(`/movie?date=${date}`);
       // console.log(data);
+      let responseOK = response && response.status === 200 && response.statusText === 'OK';
+      if (responseOK) {
+      let data = await response.data;
       return data;
+    } 
     }
   } catch (error) {
+    alert(error.response.data);
     console.log(error);
   }
 };
@@ -28,6 +33,7 @@ export const getMovieVid = async (name, id) => {
       return vidId;
     }
   } catch (error) {
+    alert(error);
     console.log(error);
   }
 };

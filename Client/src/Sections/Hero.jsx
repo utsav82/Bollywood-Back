@@ -12,9 +12,23 @@ function Hero() {
   const setData = async () => {
     if (birthdate != "") {
       console.log(birthdate);
-      const mdata = await getMovieData(birthdate);
-      setShow(true);
-      dispatch({ type: "SET_MOVIE_DATA", movie_data: mdata });
+      try{
+      const mdata = await getMovieData(birthdate)
+      if(mdata)
+      {
+        setShow(true);
+        dispatch({ type: "SET_MOVIE_DATA", movie_data: mdata });
+      }
+      else
+      {
+        setShow(false);
+      }
+     }
+      catch(err)
+      {
+        setShow(false);
+        console.log(err);
+      }
     }
   };
 
@@ -33,7 +47,7 @@ function Hero() {
           <Form></Form>
           <div className="flex flex-row items-center justify-center">
             {show && <Card {...movie_data}></Card>}
-            <Player></Player>
+            {show && <Player></Player>}
           </div>
         </div>
         <div>
