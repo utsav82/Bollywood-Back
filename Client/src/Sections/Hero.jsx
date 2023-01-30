@@ -36,7 +36,7 @@ function Hero() {
     setData();
   }, [birthdate]);
   return (
-    <div className="hero flex flex-col justify-center justify-items-center items-center h-screen drop-shadow-[5px_10px_4px_rgba(0,0,0,0.5)]">
+    <div id="Hero" className="hero flex flex-col justify-center justify-items-center items-center h-screen drop-shadow-[5px_10px_4px_rgba(0,0,0,0.5)]">
       <div className="absolute top-[-2rem] z-10">
         <h1 className="text-[7rem] leading-1 font-['devanagarish'] drop-shadow-[5px_10px_4px_rgba(0,0,0,0.15)]">
           Bollywood Back

@@ -8,10 +8,12 @@ function Footer() {
   return (
     <div className=" w-[100%] h-[6.900rem] bg-[#013642] flex-col items-center justify-between text-white ">
       <div className=" w-[100%] h-[6.900rem]  flex items-center justify-between text-white ">
-        <div><Logo></Logo></div>
+        <div>
+          <Logo></Logo>
+        </div>
         <div className="flex flex-col items-center justify-between gap-1.5">
           <div className="flex items-center justify-between gap-4">
-            <a href="#" class="bn6">
+            <a href="#Hero" class="bn6">
               Home
             </a>
             <a href="#" class="bn6">
