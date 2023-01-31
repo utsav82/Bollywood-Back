@@ -50,6 +50,7 @@ function Form() {
   return (
     <div className="flex justify-center justify-items-center items-center w-[100%] h-[26%]">
       <form
+        autoComplete="off"
         className="flex justify-center justify-items-center items-center gap-4 w-[66%] h-[100%]"
         onSubmit={handleSubmit}
       >
@@ -67,6 +68,7 @@ function Form() {
             name="DD"
             id="DD"
             aria-label="DD"
+            autoComplete="off"
             value={DD}
             onChange={(e) => handleDD(e)}
           />
@@ -87,6 +89,7 @@ function Form() {
             name="MM"
             id="MM"
             aria-label="MM"
+            autoComplete="off"
             value={MM}
             onChange={(e) => handleMM(e)}
           />
@@ -105,6 +108,7 @@ function Form() {
             name="YYYY"
             id="YYYY"
             aria-label="YYYY"
+            autoComplete="off"
             value={YYYY}
             onChange={(e) => handleYYYY(e)}
           />
