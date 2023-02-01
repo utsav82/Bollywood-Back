@@ -42,7 +42,7 @@ function Hero() {
           Bollywood Back
         </h1>
       </div>
-      <div className="flex pl-3 relative justify-between justify-items-center items-center top-[3%] h-[88%] w-[96%] bg-[#fff]">
+      <div className="flex pl-3 relative justify-between justify-items-center items-center top-[3%] min-h-[88%] w-[96%] bg-[#fff]">
         <div className="flex flex-col relative w-[64%] h-[90%] top-[4%]">
           <Form></Form>
           <div className="flex flex-row flex-wrap items-center justify-center">
