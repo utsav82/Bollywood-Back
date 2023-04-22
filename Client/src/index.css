@@ -10,3 +10,35 @@
   font-family: devanagarish;
   src: url("../src/assets/Fonts/devanagarish.ttf");
 }
+
+.bn6 {
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  border: solid #fff 2px;
+  background: transparent;
+  padding: 0.3em 1em;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 550;
+  color: #ffffff;
+  background-size: 100% 100%;
+  
+}
+
+.bn6:hover {
+  background: linear-gradient(
+    55deg,
+    transparent 10%,
+    #161616 10% 20%,
+    transparent 20% 30%,
+    #161616 30% 40%,
+    transparent 40% 50%,
+    #161616 50% 60%,
+    transparent 60% 70%,
+    #161616 70% 80%,
+    transparent 80% 90%,
+    #161616 90% 100%
+  );
+  animation: 3s linear 1s infinite alternate slidein;
+}
