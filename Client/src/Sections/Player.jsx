@@ -21,9 +21,10 @@ function Player() {
   }, [movie_data]);
 
   return (
-    <div className="flex flex-col relative w-[70%] h-[100%] top-[2%] left-[6%]">
+    <div className="basis-[60%]">
       <iframe
         height="360"
+        width="100%"
         src={Url}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
