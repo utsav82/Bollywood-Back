@@ -7,7 +7,9 @@ function Logo() {
         data-v-2cb57da0=""
         fill="#fa709a"
         class="icon-text-wrapper icon-svg-group iconsvg"
-        transform="translate(50,50)"
+
+        transform="translate(50,40)"
+
       >
         <g
           class="iconsvg-imagesvg"
