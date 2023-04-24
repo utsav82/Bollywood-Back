@@ -4,7 +4,7 @@ const poster = (poster_path) => {
 };
 function Card({ poster_path, title, release_date }) {
   return (
-    <div className="flex flex-col pt-[0.5rem] pl-[3rem] basis-[40%]">
+    <div className="flex flex-col pt-[0.5rem] basis-[40%] md:pl-[3rem]">
       <img
         src={poster(poster_path)}
         alt="{title}"

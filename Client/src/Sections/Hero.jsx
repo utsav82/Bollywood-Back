@@ -47,7 +47,7 @@ function Hero() {
        <div className="flex w-[90vw] h-[90vh] bg-[#ffff] drop-shadow-[5px_10px_4px_rgba(0,0,0,0.5)] rounded-lg justify-evenly items-center ">
         <div className="flex flex-col grow">
             <Form></Form>
-            <div className="flex flex-wrap flex-col items-center justify-evenly mt-[5%] gap-y-5 md:flex-row">
+            <div className="flex flex-wrap flex-col items-center justify-evenly mt-[5%] gap-y-5 md:flex-row ">
               {loading && <div className="mt-[10%]"><ProgressBar
                 height="100"
                 width="100"
@@ -61,7 +61,7 @@ function Hero() {
               {show && !loading && <Player></Player>}
             </div>
         </div>
-        <div className="self-center hidden md:block ">
+        <div className="self-center hidden md:block shrink ">
             <img src={image} alt="amitabh bachan" />
           </div>
       </div>

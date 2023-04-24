@@ -124,8 +124,8 @@ _Below are the instructions to setup the project locally , don't forget to Cd to
 - [x] Add Readme
 - [ ] Add footer
 - [ ] Allow input through calendar 
-- [ ] Make the site responsive
-- [ ] Deploy
+- [ ] Make the site responsive (form and footer left)
+- [x] Deploy
 - [ ] Add multiple results
 - [ ] ui features like hue,tooltip and improve frontend
 
