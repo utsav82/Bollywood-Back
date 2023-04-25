@@ -42,3 +42,9 @@
   );
   animation: 3s linear 1s infinite alternate slidein;
 }
+*
+{
+margin:0;
+padding:0;
+}
+
