@@ -7,7 +7,7 @@ export const getMovieData = async (date) => {
     if (date) {
       const response = await API.get(`/movie?date=${date}`);
       // console.log(data);
-      let responseOK = response && response.status === 200 && response.statusText === 'OK';
+      let responseOK = response && response.status === 200;
       if (responseOK) {
       let data = await response.data;
       return data;

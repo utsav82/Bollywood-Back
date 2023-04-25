@@ -127,7 +127,7 @@ _Below are the instructions to setup the project locally , don't forget to Cd to
 - [ ] Make the site responsive
 - [ ] Deploy
 - [ ] Add multiple results
-- [ ] Add popular song along with movie
+- [ ] ui features like hue,tooltip and improve frontend
 
 See the [open issues](https://github.com/Utsav82/Bollywood-Back/issues) for a full list of proposed features (and known issues).
 
