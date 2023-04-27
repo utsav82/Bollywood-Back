@@ -48,7 +48,7 @@ function Form() {
   }
 
   return (
-    <div className="flex justify-center justify-items-center items-center w-[100%] h-[26%]">
+    <div className="flex justify-center justify-items-center items-center lg:w-[100%] lg:h-[26%] top:0px">
       <form
         autoComplete="off"
         className="flex justify-center justify-items-center items-center gap-4 w-[66%] h-[100%]"
@@ -56,13 +56,13 @@ function Form() {
       >
         <div className="flex flex-col items-center">
           <label
-            className="text-7xl leading-[0.5] font-['shallota']"
+            className="text-5xl lg:text-7xl leading-[0.5] font-['shallota']"
             htmlFor="DD"
           >
             DD
           </label>
           <input
-            className="w-[6.25rem] h-[5rem] text-5xl rounded-md border-2 border-black text-center "
+            className="w-[3.25rem] h-[2.5rem] lg:w-[6.25rem] lg:h-[5rem] lg:text-5xl rounded-md border-2 border-black text-center "
             type="text"
             maxLength={2}
             name="DD"
@@ -75,13 +75,13 @@ function Form() {
         </div>
         <div className="flex flex-col items-center">
           <label
-            className="text-7xl leading-[0.5] font-['shallota']"
+            className="text-5xl lg:text-7xl leading-[0.5] font-['shallota']"
             htmlFor="MM"
           >
             MM
           </label>
           <input
-            className="w-[6.25rem] h-[5rem] text-5xl rounded-md border-2 border-black text-center "
+            className="w-[3.25rem] h-[2.5rem] lg:w-[6.25rem] lg:h-[5rem] lg:text-5xl rounded-md border-2 border-black text-center "
             maxLength={2}
             type="text"
             min="0"
@@ -96,13 +96,13 @@ function Form() {
         </div>
         <div className="flex flex-col items-center">
           <label
-            className="text-7xl leading-[0.5] font-['shallota']"
+            className="text-5xl lg:text-7xl leading-[0.5] font-['shallota']"
             htmlFor="YYYY"
           >
             YYYY
           </label>
           <input
-            className="w-[9.375rem] h-[5rem] text-5xl rounded-md border-2 border-black text-center "
+            className="w-[5.25rem] h-[2.5rem] lg:w-[6.25rem] lg:h-[5rem] lg:text-5xl rounded-md border-2 border-black text-center "
             maxLength={4}
             type="text"
             name="YYYY"
