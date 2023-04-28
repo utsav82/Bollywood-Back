@@ -1,27 +1,37 @@
 import React from "react";
+import { useEffect, useState } from "react";
+import { useDataLayerValue } from "../utils/data_layer";
 
 const poster = (poster_path) => {
-  if(poster_path)
-  {
+  if (poster_path) {
     return `https://www.themoviedb.org/t/p/w300_and_h450_bestv2/${poster_path}`;
   }
-  
+
 };
 
-function Card({ poster_path, title, release_date }) {
+
+function Card(props) {
+  const [{ movie_data }] = useDataLayerValue();
+  let show = props.show?"opacity-1":"opacity-0";
+  useEffect(() => {
+     show = props.show?"opacity-1":"opacity-0";
+  }, [movie_data]);
   return (
-    <div className="flex flex-col w-full max-w-xs mx-auto my-4 rounded-lg shadow-md overflow-hidden shrink">
+
+    <div className={"flex flex-col w-full max-w-xs mx-auto my-4 rounded-lg shadow-md overflow-hidden shrink "+show} >
       <div className="relative">
         <img
-          src={poster(poster_path)||"https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80"} alt={title}
+          src={poster(movie_data?.poster_path)} alt={movie_data?.title}
           className="object-contain w-full h-64"
         />
       </div>
       <div className="px-6 py-4">
-        <h1 className="text-gray-900 text-lg font-bold">{title || "Title"}</h1>
-        <p className="text-gray-600 font-medium mt-2">{release_date || "Date"}</p>
+        <a href={"https://www.themoviedb.org/movie/" + movie_data?.id}>
+          <h1 className="text-gray-900 text-lg font-bold">{movie_data?.title || "Title"}</h1></a>
+        <p className="text-gray-600 font-medium mt-2">{movie_data?.release_date || "Date"}</p>
       </div>
     </div>
+
   );
 }
 

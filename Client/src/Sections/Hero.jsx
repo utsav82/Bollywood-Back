@@ -9,7 +9,7 @@ import { ProgressBar } from "react-loader-spinner";
 import Card from "./Card";
 function Hero() {
   const [{ birthdate, movie_data }, dispatch] = useDataLayerValue();
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const [loading, setLoading] = useState();
 
   const setData = async () => {
@@ -44,12 +44,13 @@ function Hero() {
         </span>
       </div>
       <div className="flex justify-center items-center">
-        <div className="flex w-[90vw] h-[90vh] bg-[#ffff] drop-shadow-[5px_10px_4px_rgba(0,0,0,0.5)] rounded-lg justify-evenly items-center ">
-          <div className="flex flex-col grow">
+        <div className="flex md:w-[90vw] md:h-[90vh] bg-[#ffff] drop-shadow-[5px_10px_4px_rgba(0,0,0,0.5)] rounded-lg justify-evenly items-center ">
+          <div className="mt-5 flex flex-col grow">
             <Form></Form>
             <div className="flex flex-col items-center justify-evenly m-5 sm:gap-4 sm:flex-row lg:mr-96  ">
+              
               {loading && (
-                <div className="mt-10">
+                <div className="absolute lg:pl-52">
                   <ProgressBar
                     height="100"
                     width="100"
@@ -61,11 +62,16 @@ function Hero() {
                   />
                 </div>
               )}
-               {show && !loading && <Card {...movie_data}></Card>}
-              {show && !loading && <Player></Player>}
+
+             
+                <Card  show={show} ></Card>
+                <Player show={show}></Player>
+            
+
+
             </div>
           </div>
-          <div className="absolute self-center hidden shrink lg:block right-0 -z-1">
+          <div className="absolute self-center hidden shrink lg:block right-0 -z-1 opacity-80 xl:opacity-100">
             <img src={image} alt="amitabh bachan" />
           </div>
         </div>

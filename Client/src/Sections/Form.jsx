@@ -48,7 +48,7 @@ function Form() {
   }
 
   return (
-    <div className="flex justify-center justify-items-center items-center lg:w-[100%] lg:h-[26%] top:0px">
+    <div className="flex justify-center justify-items-center items-center lg:w-[100%] lg:h-[26%] top:0px font-medium lg:font-normal">
       <form
         autoComplete="off"
         className="flex justify-center justify-items-center items-center gap-4 w-[66%] h-[100%]"
@@ -67,7 +67,7 @@ function Form() {
             maxLength={2}
             name="DD"
             id="DD"
-            aria-label="DD"
+            aria-label="day"
             autoComplete="off"
             value={DD}
             onChange={(e) => handleDD(e)}
@@ -88,7 +88,7 @@ function Form() {
             max="99"
             name="MM"
             id="MM"
-            aria-label="MM"
+            aria-label="month"
             autoComplete="off"
             value={MM}
             onChange={(e) => handleMM(e)}
@@ -102,12 +102,12 @@ function Form() {
             YYYY
           </label>
           <input
-            className="w-[5.25rem] h-[2.5rem] lg:w-[6.25rem] lg:h-[5rem] lg:text-5xl rounded-md border-2 border-black text-center "
+            className="w-[5.25rem] h-[2.5rem] lg:w-[8.25rem] lg:h-[5rem] lg:text-5xl rounded-md border-2 border-black text-center "
             maxLength={4}
             type="text"
             name="YYYY"
             id="YYYY"
-            aria-label="YYYY"
+            aria-label="Year"
             autoComplete="off"
             value={YYYY}
             onChange={(e) => handleYYYY(e)}
