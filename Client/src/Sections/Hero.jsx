@@ -50,7 +50,7 @@ function Hero() {
             <div className="flex flex-col items-center justify-evenly m-5 sm:gap-4 sm:flex-row lg:mr-96  ">
               
               {loading && (
-                <div className="absolute lg:pl-52">
+                <div className="absolute lg:pl-52 top-52 sm:top-auto">
                   <ProgressBar
                     height="100"
                     width="100"
