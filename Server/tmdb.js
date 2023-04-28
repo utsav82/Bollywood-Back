@@ -20,6 +20,7 @@ export function search(date1, date2) {
 
 export function trailer(name) {
   try {
+   
     const result = axios.get("https://www.googleapis.com/youtube/v3/search", {
       params: {
         key: process.env.API_KEY_YT,
@@ -29,6 +30,7 @@ export function trailer(name) {
         q: name + "hindi bollywood movie trailer",
       },
     });
+    
     return result;
   } catch (err) {
     console.log(err);

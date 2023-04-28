@@ -6,7 +6,7 @@ import { useDataLayerValue } from "../utils/data_layer";
 function Player() {
   const [{ youtube_id, movie_data, birthdate }, dispatch] = useDataLayerValue();
   const [Url, setUrl] = useState("");
-  useEffect(() => {}, [youtube_id]);
+  useEffect(() => { }, [youtube_id]);
   const setId = async () => {
     if (movie_data != null) {
       const mdataa = await getMovieVid(movie_data.title);
@@ -21,15 +21,15 @@ function Player() {
   }, [movie_data]);
 
   return (
-    <div className="basis-[60%]">
+    <div className="flex flex-col w-full mx-auto my-4 rounded-lg shadow-md overflow-hidden grow">
       <iframe
-        height="360"
-        width="100%"
-        src={Url}
+        height="350"
+        src={"https://www.youtube.com/embed/sSno9rV8Rhg"}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       ></iframe>
     </div>
+
   );
 }
 

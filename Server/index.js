@@ -49,8 +49,10 @@ app.get("/video", async (req, res) => {
   try {
     if (req.query.id) {
       var video = await TMDBtrailer(req.query.id);
+      console.log(video.data.results)
       if (video.data.results) {
         for (var i = 0, size = video.data.results.length; i < size; i++) {
+       
           if (video.data.results[i].site == "YouTube") {
             var trailer_video = video.data.results[i].key;
             if (video.data.results[i].name == "Trailer") {
@@ -59,15 +61,21 @@ app.get("/video", async (req, res) => {
           }
         }
       }
-      res.send(trailer_video);
+      if(trailer_video)
+      {
+        res.send(trailer_video);
+      }
+      
     }
     if (req.query.name) {
+      
       const videos = await trailer(req.query.name);
+      
       res.send(videos.data.items[0].id.videoId);
     }
   } catch (error) {
     console.log(error);
-    res.status(500).send(error?.response.data.error.message || 'Something went wrong');
+    res.status(500).send('Something went wrong');
   }
 });
 
