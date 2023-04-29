@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "http://localhost:3001" });
+const API = axios.create({ baseURL: "https://bollywood-back-backend.onrender.com" });
 
 export const getMovieData = async (date) => {
   try {
