@@ -1,5 +1,8 @@
 import React from "react";
 import image from "../assets/Amitabh Bachan.png";
+import lights from "../assets/lights.png";
+import Camera from "../assets/camera.jsx";
+import Action from "../assets/action.png";
 import Form from "./Form";
 import Player from "./Player";
 import { useEffect, useState } from "react";
@@ -38,14 +41,22 @@ function Hero() {
 
   return (
     <>
-      <div className="w-screen text-center">
+     
+      <div className="w-screen text-center z-10">
+        <span className="hidden sm:block absolute w-40 lg:w-52 top-0 left-0 z-10 lg:ml-12 xl:ml-16"><img src={lights} alt="lights" /></span>
         <span className="lg:text-[5rem] md:text-[4rem] text-[3rem] font-['devanagarish'] drop-shadow-[5px_10px_4px_rgba(0,0,0,0.15)]">
           Bollywood Back
+        </span>
+        <span className="hidden sm:block absolute w-28 lg:w-32 top-0 right-10 lg:mr-16 xl:mr-20 -rotate-[0deg] lg:-rotate-[10deg] z-10">
+          <Camera></Camera>
         </span>
       </div>
       <div className="flex justify-center items-center">
         <div className="flex md:w-[90vw] md:h-[90vh] bg-[#ffff] drop-shadow-[5px_10px_4px_rgba(0,0,0,0.5)] rounded-lg justify-evenly items-center ">
-          <div className="mt-5 flex flex-col grow">
+          <div className="mt-10 flex flex-col grow">
+          <div className="absolute lg:w-[100vh] pt-32 md:pt-0 lg:pt-24 xl:w-[150vh] xl:pt-0 right-0 -z-1 opacity-20 -rotate-6 -z-10 left-0">
+            <img src={Action} alt="action" />
+          </div>
             <Form></Form>
             <div className="flex flex-col items-center justify-evenly m-5 sm:gap-4 sm:flex-row lg:mr-96  ">
               
@@ -74,6 +85,7 @@ function Hero() {
           <div className="absolute self-center hidden shrink lg:block right-0 -z-1 opacity-80 xl:opacity-100">
             <img src={image} alt="amitabh bachan" />
           </div>
+         
         </div>
       </div>
     </>
