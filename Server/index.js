@@ -3,7 +3,10 @@ import cors from "cors";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import { search, trailer, TMDBtrailer } from "./tmdb.js";
-
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const app = express();
 dotenv.config();
 
@@ -12,11 +15,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const PORT = process.env.PORT || 8080 ;
-
 app.get("/", (req, res) => {
   res.send("This is a BollywoodBack Server api");
 });
-
 app.get("/movie", async (req, res) => {
   console.log(req.query.date);
   try {
