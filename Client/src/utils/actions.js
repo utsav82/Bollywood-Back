@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "http://localhost:8080" });
+
 
 export const getMovieData = async (date) => {
   try {
     if (date) {
-      const response = await API.get(`/movie?date=${date}`);
+      const response = await axios.get(`/movie?date=${date}`);
       // console.log(data);
       let responseOK = response && response.status === 200;
       if (responseOK) {
@@ -21,14 +21,14 @@ export const getMovieData = async (date) => {
 export const getMovieVid = async (name, id) => {
   try {
     if (id) {
-      const vidId = await API.get(`/video?id=${id}`);
+      const vidId = await axios.get(`/video?id=${id}`);
       console.log(vidId.data);
       if (vidId) {
         return vidId;
       }
     }
     if (name) {
-      const vidId = await API.get(`/video?name=${name}`);
+      const vidId = await axios.get(`/video?name=${name}`);
       console.log(vidId.data);
       return vidId;
     }
