@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8080 ;
 
 app.get("/", (req, res) => {
   res.send("This is a BollywoodBack Server api");
@@ -78,6 +78,14 @@ app.get("/video", async (req, res) => {
     res.status(500).send('Something went wrong');
   }
 });
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../Client', 'dist')));
+  app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../Client', 'dist', 'index.html'));
+  })
+}
+
 
 app.listen(PORT, () => {
   console.log(`Server Running on port - ${PORT}`);
