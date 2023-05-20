@@ -15,9 +15,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const PORT = process.env.PORT || 8080 ;
-app.get("/", (req, res) => {
-  res.send("This is a BollywoodBack Server api");
-});
+  app.use(express.static(path.join(__dirname, '../Client', 'dist')));
 app.get("/movie", async (req, res) => {
   console.log(req.query.date);
   try {
@@ -80,12 +78,12 @@ app.get("/video", async (req, res) => {
   }
 });
 
-if (process.env.NODE_ENV === 'Production') {
-  app.use(express.static(path.join(__dirname, '../Client', 'dist')));
+
+
   app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '../Client', 'dist', 'index.html'));
   })
-}
+
 
 
 app.listen(PORT, () => {
