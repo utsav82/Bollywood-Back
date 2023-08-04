@@ -3,7 +3,7 @@ import React from "react";
 function Calender_Btn() {
   return (
     <svg
-      className="lg:h-28 lg:w-28 flex-no-shrink fill-current h-16 w-16"
+      className="lg:h-24 lg:w-20 flex-no-shrink fill-current h-16 w-16"
       viewBox="0 0 88 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

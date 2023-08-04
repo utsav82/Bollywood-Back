@@ -8,7 +8,7 @@ function Footer() {
   return (
 
     <div className="w-screen  bg-[#013642]  bottom-0	flex flex-col mt-10 m-auto justify-between items-center ">
-      <div className=" w-screen flex items-center justify-between text-white mt-5  ">
+      <div className=" w-screen flex items-center justify-between text-white my-5  ">
       
         <div className="flex items-center justify-between gap-1.5 flex-col sm:flex-row">
           {/* <div className="flex items-center justify-between gap-4">
@@ -53,11 +53,9 @@ function Footer() {
           <Tmdb_logo></Tmdb_logo>
           <Youtube_logo></Youtube_logo>
         </div>
+        
       </div>
 
-      <div className="w-[100%] bg-[#000] h-[2rem] text-s mbt-[0px] bottom-0 flex justify-center text-center text-white mt-5">
-        <p>© 2022-23 | Made by Dev | All rights reserved</p>
-      </div>
     </div>
   );
 }

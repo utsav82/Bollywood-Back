@@ -54,11 +54,11 @@ function Hero() {
       <div className="flex justify-center items-center">
         <div className="flex md:w-[90vw] md:h-[90vh] bg-[#ffff] drop-shadow-[5px_10px_4px_rgba(0,0,0,0.5)] rounded-lg justify-evenly items-center ">
           <div className="mt-10 flex flex-col grow">
-          <div className="absolute lg:w-[100vh] pt-32 md:pt-0 lg:pt-24 xl:w-[150vh] xl:pt-0 right-0 -z-1 opacity-20 -rotate-6 -z-10 left-0">
+          <div className="absolute xl:w-[120vh] pt-32 md:pt-0 lg:pt-24 xl:pt-0 right-0 -z-1 opacity-20 -rotate-6 -z-10 left-0">
             <img src={Action} alt="action" />
           </div>
             <Form></Form>
-            <div className="flex flex-col items-center justify-evenly m-5 sm:gap-4 sm:flex-row lg:mr-96  ">
+            <div className="flex flex-col items-center justify-evenly m-5 sm:gap-4 xl:flex-row xl:mr-96  ">
               
               {loading && (
                 <div className="absolute lg:pl-52 top-52 sm:top-auto">
@@ -82,7 +82,7 @@ function Hero() {
 
             </div>
           </div>
-          <div className="absolute self-center hidden shrink lg:block right-0 -z-1 opacity-80 xl:opacity-100">
+          <div className="absolute self-center hidden shrink xl:block right-0 -z-1 opacity-80 xl:opacity-100">
             <img src={image} alt="amitabh bachan" />
           </div>
          
