@@ -122,12 +122,12 @@ _Below are the instructions to setup the project locally , don't forget to Cd to
 ## Roadmap
 
 - [x] Add Readme
-- [ ] Add footer
-- [ ] Allow input through calendar 
-- [ ] Make the site responsive (form and footer left)
+- [X] Add footer
+- [X] Allow input through calendar 
+- [X] Make the site responsive (form and footer left)
 - [x] Deploy
 - [ ] Add multiple results
-- [ ] ui features like hue,tooltip and improve frontend
+- [ ] ui tweaks
 
 See the [open issues](https://github.com/Utsav82/Bollywood-Back/issues) for a full list of proposed features (and known issues).
 
