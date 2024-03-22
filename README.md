@@ -25,7 +25,6 @@
   <p align="center">
     Discover the Bollywood movie that were popular when you were born
     <br />
-    <a href="https://github.com/utsav82/Bollywood-Back">View Demo(Upcoming)</a>
   </p>
 </div>
 
