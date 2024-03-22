@@ -34,6 +34,6 @@ export const getMovieVid = async (name, id) => {
     }
   } catch (error) {
     alert(error);
-    console.log(error);
+    console.log(error.response.data);
   }
 };
